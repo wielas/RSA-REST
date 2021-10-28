@@ -1,8 +1,8 @@
-#RSA REST API
+# RSA REST API
 
 RSA cipher implementation along with REST API server and ability to encrypt/decrypt through endpoints.
 
-###Setup
+### Setup
 * Create a Python virtualenv within a working directory 
 
 `python -m virtualenv venv`
@@ -23,11 +23,11 @@ RSA cipher implementation along with REST API server and ability to encrypt/decr
 * Access FastAPI's built-in swagger (`localhost:8000/docs`)
 
 
-###Running tests
+### Running tests
 Make sure you're into `/app` folder then execute:
 `pytest -v`
 
-###Configuration
+### Configuration
 
 In order to change the time cipher takes to encode/decode - change
 the random sample prime range in RSA.py file. The following changes along
