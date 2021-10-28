@@ -20,8 +20,19 @@ RSA cipher implementation along with REST API server and ability to encrypt/decr
 
 `uvicorn app.main:app --reload`
 
+### Encryption
+
 * Access FastAPI's built-in swagger (`localhost:8000/docs`)
 
+* Enter message to encrypt into the `encrypt` endpoint
+
+Returned list is the RSA super-safe encrypted top-secret message!
+
+### Decrypt
+
+* Copy an entire list of integers from response (along with the braces if you will) and paste it directly into `decrypt` endpoint message window
+
+Careful! As the session changes so do the keys - top-secred message could stay secret forever!
 
 ### Running tests
 Make sure you're into `/app` folder then execute:
