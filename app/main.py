@@ -23,23 +23,10 @@ def get_current_username(credentials: HTTPBasicCredentials = Depends(security)):
     return credentials.username
 
 
-def get_current_credentials(credentials: HTTPBasicCredentials = Depends(security)):
-    correct_username = secrets.compare_digest(credentials.username, "wielas")
-    correct_password = secrets.compare_digest(credentials.password, "1234")
-    if not (correct_username and correct_password):
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Incorrect email or password",
-            headers={"WWW-Authenticate": "Basic"},
-        )
-    return credentials.username, credentials.password
-
-
 @app.get("/")
-async def root(credentials: str = Depends(get_current_credentials)):
+async def root(username: str = Depends(get_current_username)):
     return {
-        "username": credentials[0],
-        "password": f"{rsa.encrypt(credentials[1])} :))"
+        "username": username,
     }
 
 
