@@ -4,7 +4,7 @@ import secrets
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
-import RSA
+from app import RSA
 
 app = FastAPI()
 security = HTTPBasic()

@@ -1,5 +1,5 @@
 import random
-from math import fmod, gcd, sqrt
+from math import gcd
 from sympy import isprime, primerange
 
 
@@ -54,14 +54,3 @@ class RSA:
 
     def decrypt(self, encrypted_message):
         return [chr((char ** self.private_d) % self.n) for char in encrypted_message]
-
-
-if __name__ == '__main__':
-    rsa = RSA()
-    print(f"d = {rsa.private_d} \ne = {rsa.public_e} \nn = {rsa.n}")
-    mess_to_encrypt = "AlAma Kot4  !@#$"
-    print(f"message to encrypt: {mess_to_encrypt}")
-    encrypted_mess = rsa.encrypt(mess_to_encrypt)
-    print(f"encrypted message: {encrypted_mess}")
-    decrypted_mess = ''.join(rsa.decrypt(encrypted_mess))
-    print(f"decrypted message: {decrypted_mess}")

@@ -1,7 +1,7 @@
 import base64
 from fastapi.testclient import TestClient
 
-from main import app, rsa
+from app.main import app, rsa
 
 client = TestClient(app)
 test_str = "Aa.  12!*$^"
